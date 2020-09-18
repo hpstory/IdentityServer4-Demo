@@ -1,4 +1,5 @@
 ﻿using AspDotNetCoreApi.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -7,8 +8,8 @@ using System.Collections.Generic;
 
 namespace AspDotNetCoreApi.Controllers
 {
-    [EnableCors]
     [Route("api/todo")]
+    [Authorize]
     public class ToDoController : Controller
     {
         private readonly List<ToDo> _toDos;

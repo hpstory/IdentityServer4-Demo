@@ -27,27 +27,27 @@ namespace AspDotNetCoreApi
                     new CamelCasePropertyNamesContractResolver();
                 setup.SerializerSettings.DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Local;
             });
-            //services.AddAuthorization(options =>
-            //{
-            //    options.AddPolicy("ApiScope", policy =>
-            //    {
-            //        policy.RequireAuthenticatedUser();
-            //        policy.RequireClaim("scope", "scope1");
-            //    });
-            //});
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("ApiScope", policy =>
+                {
+                    policy.RequireAuthenticatedUser();
+                    policy.RequireClaim("scope", "scope1");
+                });
+            });
 
-            //services.AddAuthentication("Bearer")
-            //    .AddJwtBearer("Bearer", options =>
-            //    {
-            //        options.Authority = "https://localhost:5001";
-            //        options.TokenValidationParameters = new TokenValidationParameters
-            //        {
-            //            ValidateAudience = false,
-            //            ClockSkew = TimeSpan.FromMinutes(1),
-            //            RequireExpirationTime = true,
-            //        };
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer("Bearer", options =>
+                {
+                    options.Authority = "https://localhost:5001";
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateAudience = false,
+                        ClockSkew = TimeSpan.FromMinutes(1),
+                        RequireExpirationTime = true,
+                    };
 
-            //    });
+                });
             services.AddCors(options =>
             {
                 options.AddPolicy(
@@ -79,7 +79,7 @@ namespace AspDotNetCoreApi
                 app.UseHsts();
             }
 
-            //app.UseAuthentication();
+            app.UseAuthentication();
 
             app.UseHttpsRedirection();
 
@@ -87,12 +87,12 @@ namespace AspDotNetCoreApi
 
             app.UseCors("Angular");
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
-                   // .RequireAuthorization("ApiScope");
+                endpoints.MapControllers()
+                    .RequireAuthorization("ApiScope");
             });
         }
     }

@@ -19,7 +19,6 @@ export class TodoTableComponent implements AfterViewInit, OnInit {
   ngOnInit() {
     this.todoService.getAllTodos().subscribe(todos => {
       this.todos = todos;
-      console.log(todos);
     });
   }
 

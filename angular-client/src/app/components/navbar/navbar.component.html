@@ -21,6 +21,16 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>angular-client</span>
+
+      <span class="toolbar-space"></span>
+
+      <span *ngIf="oidc.userAvailable">{{ oidc.user.profile.name }}</span>
+
+      <button mat-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngIf="!oidc.userAvailable" (click)="oidc.triggerSignIn()">登陆</button>
+        <button mat-menu-item *ngIf="oidc.userAvailable" (click)="oidc.triggerSignOut()">登出</button>
+      </mat-menu>
     </mat-toolbar>
     <!-- Add Content Here -->
     <div>

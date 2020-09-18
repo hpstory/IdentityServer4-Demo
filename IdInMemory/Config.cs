@@ -29,7 +29,7 @@ namespace IdInMemory
         public static IEnumerable<Client> Clients =>
             new Client[]
             {
-                // m2m client credentials flow client
+                // client credentials flow client
                 new Client
                 {
                     ClientId = "client",
@@ -69,6 +69,43 @@ namespace IdInMemory
                     AccessTokenLifetime = 60,
                     // where to redirect to after logout
                     PostLogoutRedirectUris = { "https://localhost:6002/signout-callback-oidc" },
+                    AllowedScopes =
+                    {
+                        "scope1",
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        IdentityServerConstants.StandardScopes.Address,
+                        IdentityServerConstants.StandardScopes.Phone,
+                    }
+                },
+
+                new Client
+                {
+                    ClientId = "angular-client",
+                    ClientName = "angular SPA",
+                    ClientUri = "http://localhost:4200",
+
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    RequireConsent = true,
+                    AccessTokenLifetime = 60 * 5,
+                    RedirectUris =
+                    {
+                        "http://localhost:4200/signin-oidc",
+                        "http://localhost:4200/redirect-silentrenew"
+                    },
+
+                    PostLogoutRedirectUris =
+                    {
+                        "http://localhost:4200/"
+                    },
+
+                    AllowedCorsOrigins =
+                    {
+                        "http://localhost:4200"
+                    },
+
                     AllowedScopes =
                     {
                         "scope1",

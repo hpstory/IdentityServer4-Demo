@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,13 +18,16 @@ import { TodoTableComponent } from './components/todo-table/todo-table.component
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SigninOidcComponent } from './services/oidc/signin-oidc/signin-oidc.component';
+import { RedirectSilentRenewComponent } from './services/oidc/redirect-silent-renew/redirect-silent-renew.component';
+import { AuthorizationHeaderInterceptor } from './services/oidc/authorization-header.interceptor';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     DashboardComponent,
     TodoTableComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    SigninOidcComponent,
+    RedirectSilentRenewComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MatSnackBarModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthorizationHeaderInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
