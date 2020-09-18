@@ -48,7 +48,6 @@ namespace AspDotNetCoreApi
             //        };
 
             //    });
-
             services.AddCors(options =>
             {
                 options.AddPolicy(
