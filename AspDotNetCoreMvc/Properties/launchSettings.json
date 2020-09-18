@@ -1,0 +1,12 @@
+﻿{
+  "profiles": {
+    "AspDotNetCoreMvc": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:6002",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
