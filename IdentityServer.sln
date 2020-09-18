@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdInMemory", "IdInMemory\IdInMemory.csproj", "{89899C09-F0BF-480F-B65C-EE0777D7F656}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdInMemory", "IdInMemory\IdInMemory.csproj", "{89899C09-F0BF-480F-B65C-EE0777D7F656}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{17F393F4-EB4D-4803-B200-3EBFD2AD451C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{17F393F4-EB4D-4803-B200-3EBFD2AD451C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspDotNetCoreApi", "AspDotNetCoreApi\AspDotNetCoreApi.csproj", "{7E80157F-DF1F-463A-9859-61B80795E5B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspDotNetCoreApi", "AspDotNetCoreApi\AspDotNetCoreApi.csproj", "{7E80157F-DF1F-463A-9859-61B80795E5B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspDotNetCoreMvc", "AspDotNetCoreMvc\AspDotNetCoreMvc.csproj", "{D71CBA43-89FC-43C8-B6A8-1D04A82A3ADF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspDotNetCoreMvc", "AspDotNetCoreMvc\AspDotNetCoreMvc.csproj", "{D71CBA43-89FC-43C8-B6A8-1D04A82A3ADF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HybirdMvcClient", "HybirdMvcClient\HybirdMvcClient.csproj", "{5F81A42C-EA79-4048-AD3B-0232B3943887}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{89899C09-F0BF-480F-B65C-EE0777D7F656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -72,5 +71,23 @@ Global
 		{D71CBA43-89FC-43C8-B6A8-1D04A82A3ADF}.Release|x64.Build.0 = Release|Any CPU
 		{D71CBA43-89FC-43C8-B6A8-1D04A82A3ADF}.Release|x86.ActiveCfg = Release|Any CPU
 		{D71CBA43-89FC-43C8-B6A8-1D04A82A3ADF}.Release|x86.Build.0 = Release|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Debug|x64.Build.0 = Debug|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Debug|x86.Build.0 = Debug|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Release|x64.ActiveCfg = Release|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Release|x64.Build.0 = Release|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Release|x86.ActiveCfg = Release|Any CPU
+		{5F81A42C-EA79-4048-AD3B-0232B3943887}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {401F8BF8-A8E6-48E6-B655-7C5A20A86E78}
 	EndGlobalSection
 EndGlobal

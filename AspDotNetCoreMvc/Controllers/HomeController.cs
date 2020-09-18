@@ -59,7 +59,7 @@ namespace AspDotNetCoreMvc.Controllers
             var accessToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
             var idToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.IdToken);
             var refreshToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.RefreshToken);
-            //var authorizationCode = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.Code);
+            // var authorizationCode = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.Code);
             ViewData["accessToken"] = accessToken;
             ViewData["idToken"] = idToken;
             ViewData["refreshToken"] = refreshToken;
@@ -85,11 +85,11 @@ namespace AspDotNetCoreMvc.Controllers
             var tokenResponse = await client.RequestRefreshTokenAsync(new RefreshTokenRequest 
             {
                 Address = disco.TokenEndpoint,
-                RefreshToken = refreshToken,
                 ClientId = "mvc",
                 ClientSecret = "secret",
                 Scope = "scope1 openid profile email phone address",
-                GrantType = OpenIdConnectGrantTypes.RefreshToken
+                GrantType = OpenIdConnectGrantTypes.RefreshToken,
+                RefreshToken = refreshToken
             });
             if (tokenResponse.IsError)
             {

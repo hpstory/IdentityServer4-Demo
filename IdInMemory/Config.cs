@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace IdInMemory
                 new IdentityResources.Email(),
                 new IdentityResources.Address(),
                 new IdentityResources.Phone(),
+                new IdentityResource("roles", "role", new List<string>{ JwtClaimTypes.Role }),
+                new IdentityResource("locations", "location", new List<string>{ "location" })
             };
 
         public static IEnumerable<ApiScope> ApiScopes =>
@@ -96,6 +99,7 @@ namespace IdInMemory
                         "http://localhost:4200/redirect-silentrenew"
                     },
 
+                    // /结尾，否则登出后无法正常跳转
                     PostLogoutRedirectUris =
                     {
                         "http://localhost:4200/"
@@ -114,6 +118,44 @@ namespace IdInMemory
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.Address,
                         IdentityServerConstants.StandardScopes.Phone,
+                    }
+                },
+
+                new Client
+                {
+                    ClientId = "hybrid client",
+                    ClientName = "AspDotNetCoreMVC Hybrid",
+                    ClientSecrets =
+                    {
+                        new Secret("hybrid secret".Sha256())
+                    },
+                    AllowedGrantTypes = GrantTypes.Hybrid,
+                    // 指定使用授权代码的客户端是否必须发送证明密钥
+                    RequirePkce = false,
+                    RedirectUris =
+                    {
+                        "https://localhost:6003/signin-oidc"
+                    },
+
+                    PostLogoutRedirectUris =
+                    {
+                        "https://localhost:6003/signout-callback-oidc"
+                    },
+
+                    AllowOfflineAccess = true,
+
+                    AlwaysIncludeUserClaimsInIdToken = true,
+
+                    AllowedScopes =
+                    {
+                        "scope1",
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        IdentityServerConstants.StandardScopes.Address,
+                        IdentityServerConstants.StandardScopes.Phone,
+                        "roles",
+                        "locations"
                     }
                 }
             };
