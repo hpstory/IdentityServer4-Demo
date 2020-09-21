@@ -1,10 +1,12 @@
 using System;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.VisualBasic;
 using Newtonsoft.Json.Serialization;
 
 namespace AspDotNetCoreApi
@@ -35,19 +37,27 @@ namespace AspDotNetCoreApi
                     policy.RequireClaim("scope", "scope1");
                 });
             });
-
-            services.AddAuthentication("Bearer")
-                .AddJwtBearer("Bearer", options =>
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                .AddIdentityServerAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme,
+                referenceOptions => 
                 {
-                    options.Authority = "https://localhost:5001";
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateAudience = false,
-                        ClockSkew = TimeSpan.FromMinutes(1),
-                        RequireExpirationTime = true,
-                    };
-
+                    referenceOptions.Authority = "https://localhost:5001";
+                    referenceOptions.ApiName = "api1";
+                    referenceOptions.ApiSecret = "api1 secret";
                 });
+                // JWT token
+                //.AddJwtBearer("Bearer", options =>
+                //{
+                //    options.Authority = "https://localhost:5001";
+                //    options.Audience = "api1";
+                    // 不进行验证Api的Scope和其他一些配置的
+                    //options.TokenValidationParameters = new TokenValidationParameters
+                    //{
+                    //    ValidateAudience = false,
+                    //    ClockSkew = TimeSpan.FromMinutes(1),
+                    //    RequireExpirationTime = true,
+                    //};
+                //});
             services.AddCors(options =>
             {
                 options.AddPolicy(

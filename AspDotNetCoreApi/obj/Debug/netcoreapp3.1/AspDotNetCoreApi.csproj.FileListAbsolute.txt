@@ -57,8 +57,6 @@ E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\bin\Debug\netcoreapp3.1\System
 E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.csprojAssemblyReference.cache
 E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.AssemblyInfoInputs.cache
 E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.AssemblyInfo.cs
-E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.csproj.CoreCompileInputs.cache
-E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.MvcApplicationPartsAssemblyInfo.cache
 E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.RazorTargetAssemblyInfo.cache
 E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.csproj.CopyComplete
 E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\staticwebassets\AspDotNetCoreApi.StaticWebAssets.Manifest.cache
@@ -66,3 +64,8 @@ E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\static
 E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.dll
 E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.pdb
 E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.genruntimeconfig.cache
+E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\bin\Debug\netcoreapp3.1\IdentityModel.dll
+E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\bin\Debug\netcoreapp3.1\IdentityModel.AspNetCore.OAuth2Introspection.dll
+E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\bin\Debug\netcoreapp3.1\IdentityServer4.AccessTokenValidation.dll
+E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.csproj.CoreCompileInputs.cache
+E:\identity\IdentityServer4-Demo\AspDotNetCoreApi\obj\Debug\netcoreapp3.1\AspDotNetCoreApi.MvcApplicationPartsAssemblyInfo.cache

@@ -103,8 +103,6 @@ E:\identity\IdentityServer4-Demo\IdInMemory\bin\Debug\netcoreapp3.1\System.Ident
 E:\identity\IdentityServer4-Demo\IdInMemory\obj\Debug\netcoreapp3.1\IdInMemory.csprojAssemblyReference.cache
 E:\identity\IdentityServer4-Demo\IdInMemory\obj\Debug\netcoreapp3.1\IdInMemory.AssemblyInfoInputs.cache
 E:\identity\IdentityServer4-Demo\IdInMemory\obj\Debug\netcoreapp3.1\IdInMemory.AssemblyInfo.cs
-E:\identity\IdentityServer4-Demo\IdInMemory\obj\Debug\netcoreapp3.1\IdInMemory.csproj.CoreCompileInputs.cache
-E:\identity\IdentityServer4-Demo\IdInMemory\obj\Debug\netcoreapp3.1\IdInMemory.MvcApplicationPartsAssemblyInfo.cache
 E:\identity\IdentityServer4-Demo\IdInMemory\obj\Debug\netcoreapp3.1\IdInMemory.RazorAssemblyInfo.cache
 E:\identity\IdentityServer4-Demo\IdInMemory\obj\Debug\netcoreapp3.1\IdInMemory.RazorAssemblyInfo.cs
 E:\identity\IdentityServer4-Demo\IdInMemory\obj\Debug\netcoreapp3.1\IdInMemory.TagHelpers.input.cache

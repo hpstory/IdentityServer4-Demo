@@ -76,7 +76,7 @@ namespace HybirdMvcClient
                         RoleClaimType = JwtClaimTypes.Role
                     };
                 });
-            services.AddAuthorizationCore(options =>
+            services.AddAuthorization(options =>
             {
                 //options.AddPolicy("sb", builder => 
                 //{

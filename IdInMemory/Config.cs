@@ -29,6 +29,17 @@ namespace IdInMemory
                 new ApiScope("scope1")
             };
 
+        public static IEnumerable<ApiResource> ApiResources =>
+            new List<ApiResource>
+            {
+                new ApiResource
+                {
+                    Name = "api1",
+                    Scopes = { "scope1" },
+                    ApiSecrets = { new Secret("api1 secret".Sha256()) }
+                }
+            };
+
         public static IEnumerable<Client> Clients =>
             new Client[]
             {
@@ -130,8 +141,10 @@ namespace IdInMemory
                         new Secret("hybrid secret".Sha256())
                     },
                     AllowedGrantTypes = GrantTypes.Hybrid,
-                    // 指定使用授权代码的客户端是否必须发送证明密钥
+                    // 指定使用授权代码的客户端是否必须发送证明密钥                  
                     RequirePkce = false,
+                    // 设置token类型，默认jwt
+                    AccessTokenType = AccessTokenType.Reference,
                     RedirectUris =
                     {
                         "https://localhost:6003/signin-oidc"

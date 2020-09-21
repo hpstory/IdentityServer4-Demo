@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "g26qq/fcgv1X2bLBJDI8NfRIYHyLaICeRy1RbXh0YRuuSw8M93sd9ncGNjNC0X+b4M110TAv41LmH6h1UgSAHw==",
+  "dgSpecHash": "qF2eVoTMjJj3PHKZ6FKEbDNQMVEnknQLqViwu5vVwq4Zss181Zuc+ThLA1JXsMVNLwp1paV6qtrRWd8lpx+4lQ==",
   "success": true,
   "projectFilePath": "E:\\identity\\IdentityServer4-Demo\\AspDotNetCoreApi\\AspDotNetCoreApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\lenovo\\.nuget\\packages\\identitymodel\\4.0.0\\identitymodel.4.0.0.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\identitymodel.aspnetcore.oauth2introspection\\4.0.1\\identitymodel.aspnetcore.oauth2introspection.4.0.1.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\identityserver4.accesstokenvalidation\\3.0.1\\identityserver4.accesstokenvalidation.3.0.1.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
