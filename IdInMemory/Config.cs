@@ -144,7 +144,7 @@ namespace IdInMemory
                     // 指定使用授权代码的客户端是否必须发送证明密钥                  
                     RequirePkce = false,
                     // 设置token类型，默认jwt
-                    AccessTokenType = AccessTokenType.Reference,
+                    // AccessTokenType = AccessTokenType.Reference,
                     RedirectUris =
                     {
                         "https://localhost:6003/signin-oidc"

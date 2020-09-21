@@ -68,48 +68,48 @@ namespace HybirdMvcClient.Controllers
         public async Task Logout()
         {
             // revoke token only for reference
-            var client = new HttpClient();
-            var disco = await client.GetDiscoveryDocumentAsync("https://localhost:5001");
-            if (disco.IsError)
-            {
-                throw new Exception(disco.Error);
-            }
+            //var client = new HttpClient();
+            //var disco = await client.GetDiscoveryDocumentAsync("https://localhost:5001");
+            //if (disco.IsError)
+            //{
+            //    throw new Exception(disco.Error);
+            //}
 
-            var accessToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
-            if (!string.IsNullOrWhiteSpace(accessToken))
-            {
-                var revokeAccessTokenResponse = await client.RevokeTokenAsync(new TokenRevocationRequest
-                {
-                    Address = disco.RevocationEndpoint,
-                    ClientId = "hybrid client",
-                    ClientSecret = "hybrid secret",
-                    Token = accessToken
-                });
+            //var accessToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
+            //if (!string.IsNullOrWhiteSpace(accessToken))
+            //{
+            //    var revokeAccessTokenResponse = await client.RevokeTokenAsync(new TokenRevocationRequest
+            //    {
+            //        Address = disco.RevocationEndpoint,
+            //        ClientId = "hybrid client",
+            //        ClientSecret = "hybrid secret",
+            //        Token = accessToken
+            //    });
 
-                if (revokeAccessTokenResponse.IsError)
-                {
-                    throw new Exception("Access Token Revocation Failed: " + revokeAccessTokenResponse.Error);
-                }
-            }
+            //    if (revokeAccessTokenResponse.IsError)
+            //    {
+            //        throw new Exception("Access Token Revocation Failed: " + revokeAccessTokenResponse.Error);
+            //    }
+            //}
 
-            var refreshToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.RefreshToken);
-            if (!string.IsNullOrWhiteSpace(refreshToken))
-            {
-                var revokeRefreshTokenResponse = await client.RevokeTokenAsync(new TokenRevocationRequest
-                {
-                    Address = disco.RevocationEndpoint,
-                    ClientId = "hybrid client",
-                    ClientSecret = "hybrid secret",
-                    Token = refreshToken
-                });
+            //var refreshToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.RefreshToken);
+            //if (!string.IsNullOrWhiteSpace(refreshToken))
+            //{
+            //    var revokeRefreshTokenResponse = await client.RevokeTokenAsync(new TokenRevocationRequest
+            //    {
+            //        Address = disco.RevocationEndpoint,
+            //        ClientId = "hybrid client",
+            //        ClientSecret = "hybrid secret",
+            //        Token = refreshToken
+            //    });
 
-                if (revokeRefreshTokenResponse.IsError)
-                {
-                    throw new Exception("Refresh Token Revocation Failed: " + revokeRefreshTokenResponse.Error);
-                }
-            }
-            //await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            //await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
+            //    if (revokeRefreshTokenResponse.IsError)
+            //    {
+            //        throw new Exception("Refresh Token Revocation Failed: " + revokeRefreshTokenResponse.Error);
+            //    }
+            //}
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
         }
 
         private async Task<string> RenewTokenAsync()

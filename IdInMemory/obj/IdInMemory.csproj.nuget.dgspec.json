@@ -40,11 +40,21 @@
           "dependencies": {
             "IdentityServer4": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[4.1.0, )"
             },
-            "Microsoft.AspNetCore.Authentication.Google": {
+            "IdentityServer4.EntityFramework": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[4.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.2.0, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",

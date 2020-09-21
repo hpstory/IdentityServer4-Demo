@@ -1,7 +1,9 @@
 using System;
+using AspDotNetCoreApi.Entities;
 using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -39,25 +41,29 @@ namespace AspDotNetCoreApi
             });
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme,
-                referenceOptions => 
+                options => 
                 {
-                    referenceOptions.Authority = "https://localhost:5001";
-                    referenceOptions.ApiName = "api1";
-                    referenceOptions.ApiSecret = "api1 secret";
+                    options.Authority = "https://localhost:5001";
+                    options.ApiName = "api1";
+                    options.ApiSecret = "api1 secret";
                 });
-                // JWT token
-                //.AddJwtBearer("Bearer", options =>
-                //{
-                //    options.Authority = "https://localhost:5001";
-                //    options.Audience = "api1";
-                    // 不进行验证Api的Scope和其他一些配置的
-                    //options.TokenValidationParameters = new TokenValidationParameters
-                    //{
-                    //    ValidateAudience = false,
-                    //    ClockSkew = TimeSpan.FromMinutes(1),
-                    //    RequireExpirationTime = true,
-                    //};
-                //});
+            // JWT token
+            //.AddJwtBearer("Bearer", options =>
+            //{
+            //    options.Authority = "https://localhost:5001";
+            //    options.Audience = "api1";
+            // 不进行验证Api的Scope和其他一些配置的
+            //options.TokenValidationParameters = new TokenValidationParameters
+            //{
+            //    ValidateAudience = false,
+            //    ClockSkew = TimeSpan.FromMinutes(1),
+            //    RequireExpirationTime = true,
+            //};
+            //});
+            services.AddDbContext<IdentityServerDbContext>(options =>
+            {
+                options.UseMySql(Configuration.GetConnectionString("MySQLConnection"));
+            });
             services.AddCors(options =>
             {
                 options.AddPolicy(

@@ -29,3 +29,4 @@ E:\identity\IdentityServer4-Demo\Client\obj\Debug\netcoreapp3.1\Client.csproj.Co
 E:\identity\IdentityServer4-Demo\Client\obj\Debug\netcoreapp3.1\Client.dll
 E:\identity\IdentityServer4-Demo\Client\obj\Debug\netcoreapp3.1\Client.pdb
 E:\identity\IdentityServer4-Demo\Client\obj\Debug\netcoreapp3.1\Client.genruntimeconfig.cache
+E:\identity\IdentityServer4-Demo\Client\obj\Debug\netcoreapp3.1\Client.csprojAssemblyReference.cache

@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace IdInMemory
 {
@@ -25,6 +27,7 @@ namespace IdInMemory
 
         public void ConfigureServices(IServiceCollection services)
         {
+            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
             services.AddControllersWithViews();
 
             var builder = services.AddIdentityServer(options =>
@@ -37,7 +40,19 @@ namespace IdInMemory
                 // see https://identityserver4.readthedocs.io/en/latest/topics/resources.html
                 options.EmitStaticAudienceClaim = true;
             })
-                .AddTestUsers(TestUsers.Users);
+                .AddTestUsers(TestUsers.Users)
+                // 添加配置数据（客户端 和 资源）
+                .AddConfigurationStore(options =>
+                {
+                    options.ConfigureDbContext = b => b.UseMySql(Configuration.GetConnectionString("MySQLConnection"),
+                        sql => sql.MigrationsAssembly(migrationsAssembly));
+                })
+                // 添加操作数据 (codes, tokens, consents)
+                .AddOperationalStore(options =>
+                {
+                    options.ConfigureDbContext = b => b.UseMySql(Configuration.GetConnectionString("MySQLConnection"),
+                        sql => sql.MigrationsAssembly(migrationsAssembly));
+                });
 
             // in-memory, code config
             builder.AddInMemoryIdentityResources(Config.IdentityResources);

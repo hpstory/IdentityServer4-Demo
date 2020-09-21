@@ -89,3 +89,4 @@ E:\identity\IdentityServer4-Demo\AspDotNetCoreMvc\obj\Debug\netcoreapp3.1\static
 E:\identity\IdentityServer4-Demo\AspDotNetCoreMvc\obj\Debug\netcoreapp3.1\AspDotNetCoreMvc.dll
 E:\identity\IdentityServer4-Demo\AspDotNetCoreMvc\obj\Debug\netcoreapp3.1\AspDotNetCoreMvc.pdb
 E:\identity\IdentityServer4-Demo\AspDotNetCoreMvc\obj\Debug\netcoreapp3.1\AspDotNetCoreMvc.genruntimeconfig.cache
+E:\identity\IdentityServer4-Demo\AspDotNetCoreMvc\obj\Debug\netcoreapp3.1\AspDotNetCoreMvc.csprojAssemblyReference.cache
